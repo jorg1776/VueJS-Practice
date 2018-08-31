@@ -1,9 +1,12 @@
 <template>
     <div name="about">
-        <p>{{name}}'s Todo List: </p>
-        <ul>
-            <li v-for="(data, index) in todoList" :key='index'>{{data.todo}}</li>
-        </ul>
+        <p>{{name}}, you have {{todoList.length}} things to do:</p>
+        
+        <template v-for="(item, index) in todoList">
+            <template v-if="todoList.length == 1">{{item.todo}}</template>
+            <template v-else-if="index < todoList.length - 1">{{item.todo}}, </template>
+            <template v-else>{{item.todo}}</template>
+        </template>
     </div>
 </template>
 

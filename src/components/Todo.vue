@@ -1,12 +1,13 @@
 <template>
-    <div name="todo">
+    <div id="todo">
         <form @submit.prevent="addTodo">
             <input placeholder="Enter something you need to do" v-model="todo">
         </form>
-
-        <ul>
-            <li v-for="(data, index) in todoList" :key='index'>{{data.todo}}</li>
-        </ul>
+        <div id="table">
+            <ul>
+                <li v-for="(data, index) in todoList" :key='index'><span>{{data.todo}}</span></li>
+            </ul>
+        </div>
     </div>
 </template>
 
@@ -28,3 +29,12 @@
         }
     }
 </script>
+
+<style scoped>
+    #todo {
+        background: yellow;
+    }
+    ul {
+        list-style-position: inside;
+    }
+</style>
