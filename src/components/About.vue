@@ -1,5 +1,5 @@
 <template>
-    <div name="about">
+    <div id="about">
         <p>{{name}}, you have {{todoList.length}} things to do:</p>
         
         <template v-for="(item, index) in todoList">
@@ -22,3 +22,16 @@
         }
     }
 </script>
+
+<style scoped>
+    #about {
+        font-size: 1.5em;
+    }
+
+    p {
+        padding: 5px;
+        border-bottom: 2px solid black;
+    }
+</style>
+
+
