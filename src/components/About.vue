@@ -5,7 +5,7 @@
         <template v-for="(item, index) in todoList">
             <template v-if="totalItems == 1">{{item.todo}}</template>
             <template v-else-if="index < totalItems - 1">{{item.todo}}, </template>
-            <template v-else>{{item.todo}}</template>
+            <template v-else>and {{item.todo}}</template>
         </template>
     </div>
 </template>
