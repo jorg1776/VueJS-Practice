@@ -15,22 +15,24 @@
 </template>
 
 <script>
-    import { todoStore } from '../store/TodoStore.js';
-
     export default {
         data () {
             return {
-                todo: '',
-                todoList: todoStore.data.todoItems
+                todo: ''
+            }
+        },
+        computed: {
+            todoList() {
+                return this.$store.getters.todoList;
             }
         },
         methods: {
             addTodo() {
-                todoStore.addTodo({todo: this.todo});
+                this.$store.commit('addTodo', {todo: this.todo});
                 this.todo = '';
             },
             remove(index){
-                todoStore.data.todoItems.splice(index, 1);
+                this.$store.commit('removeTodo', index);
             }
         }
     }
